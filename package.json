@@ -25,9 +25,7 @@
   "author": "tallyon <skowronski6@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^9.3.0"
-  },
-  "devDependencies": {
+    "@types/node": "^9.3.0",
     "ntypescript": "^1.201706190042.1"
   }
 }
