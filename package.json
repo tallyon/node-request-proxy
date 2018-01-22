@@ -2,7 +2,7 @@
   "name": "node-request-proxy",
   "version": "0.1.0",
   "description": "",
-  "main": "server.js",
+  "main": "instance.js",
   "repository": {
     "url": "https://github.com/tallyon/node-request-proxy.git",
     "type": "git"
@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node ./server.js",
     "build": "ntsc",
+    "install": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

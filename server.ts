@@ -17,4 +17,3 @@ serverInstance.Get("https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-
 
     serverInstance.Close();
 });
-
