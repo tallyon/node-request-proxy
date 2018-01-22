@@ -1,0 +1,32 @@
+{
+  "name": "node-request-proxy",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "repository": {
+    "url": "https://github.com/tallyon/node-request-proxy.git",
+    "type": "git"
+  },
+  "scripts": {
+    "start": "node ./server.js",
+    "build": "ntsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "request",
+    "proxy",
+    "light",
+    "simple",
+    "typescript",
+    "tsc"
+  ],
+  "author": "tallyon <skowronski6@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^9.3.0"
+  },
+  "devDependencies": {
+    "ntypescript": "^1.201706190042.1"
+  }
+}
