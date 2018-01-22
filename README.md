@@ -7,7 +7,7 @@ Supports:
 # Usage
 
 ```js
-import { ProxyInstance } from "./instance";
+var ProxyInstance = require("node-request-proxy").ProxyInstance;
 
 const port = 3002;
 let serverInstance = new ProxyInstance(port)
@@ -26,5 +26,4 @@ serverInstance.Get("https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-
 
     serverInstance.Close();
 });
-
 ```
