@@ -10,7 +10,17 @@ class ProxyInstance extends EventEmitter {
     constructor(port: number) {
         super();
         
-        this.server = http.createServer();
+        this.server = http.createServer((req, res) => {
+            let context = this;
+            // Remove slash first char from url
+            let url = req.url.slice(1);
+            
+            this.Get(url, (err, response) => {
+                res.writeHead(200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
+                let str = JSON.stringify(response);
+                res.end(str);
+            });
+        });
         this.server.on("error", (err) => {
             this.emit("error", err);
         });
@@ -31,6 +41,9 @@ class ProxyInstance extends EventEmitter {
     Get(url: string, callback: (err: Error, response: JSON | string) => void) {
         // Analyze url
         let parsedUrl = URL.parse(url);
+
+        if (parsedUrl == null) return callback(new Error("invalid url"), null);
+        if (parsedUrl.protocol == null) return callback(new Error("no protocol specified"), null);
 
         // Send GET request
         if (parsedUrl.protocol.toLowerCase() == "http:") {
